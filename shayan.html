@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SaaS Business Simulator</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+    <h1>SaaS Analytics Simulator</h1>
+    <py-script>
+import random
+
+def run_simulation():
+    users = 100
+    marketing_budget = 500
+    churn_rate = 0.05
+    
+    print("Starting Simulation...")
+    
+    for month in range(1, 7):
+        new_leads = random.randint(10, 50)
+        lost_users = int(users * churn_rate)
+        users = users + new_leads - lost_users
+        revenue = users * 20
+        print(f"Month {month}: Users: {users} | Revenue: ${revenue}")
+
+run_simulation()
+    </py-script>
+</body>
+</html>
